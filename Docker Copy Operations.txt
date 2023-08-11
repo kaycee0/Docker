@@ -1,0 +1,21 @@
+#The Nautilus DevOps team has some conditional data present on App Server 1 in Stratos Datacenter. There is a container ubuntu_latest running on the same server. We received a request to copy some of the data 
+#from the docker host to the container. Below are more details about 
+#the task:
+
+
+
+#On App Server 1 in Stratos Datacenter copy an encrypted file 
+#/tmp/nautilus.txt.gpg from docker host to ubuntu_latest container 
+#(running on same server) in /usr/src/ location. Please do not try to
+#modify this file
+
+solution
+
+ssh tony@stapp01
+sudo docker ps ---- to list the running containers so you can get the 
+                    the container ID
+sudo docker cp /tmp/nautilus.txt.gpg 7f18c9f8de90:/usr/src/nautilus.txt.gpg --- copying the file "/tmp/nautilus.txt.gpg"
+                                                                                from docker host to ubuntu_latest
+                                                                                container.
+
+Note: we add the container ID for the ubuntu_latest container before the destination location separated with ":"

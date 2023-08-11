@@ -7,5 +7,6 @@
 
 solution
 
-docker stop kke-container  ---- to stop the running container
-docker rm kke-container    ---- to remove/delete the container
+ssh tony@stapp01
+sudo docker stop kke-container  ---- to stop the running container
+sudo docker rm kke-container    ---- to remove/delete the container
